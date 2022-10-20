@@ -1,5 +1,4 @@
-# Base Setup for React App without bulky unused files
-### 'git clone https://github.com/7daytheory/react-starter'
+Working with useReducer hook - React
 
 ### `npm install`
 
