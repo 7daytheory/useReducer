@@ -1,21 +1,22 @@
 import {React, useReducer} from 'react';
 import {postReducer, INITIAL_STATE} from './postReducer';
+import { ACTION_TYPES } from './postActionTypes';
 
 const Reducer = () => {
 
   const [state, dispatch] = useReducer(postReducer, INITIAL_STATE);
 
   const handleFetch = () => {
-    dispatch({type:'FETCH_START'})
+    dispatch({type:ACTION_TYPES.FETCH_START})
     fetch("https://jsonplaceholder.typicode.com/posts/1")
     .then((res) => {
       return res.json();
     })
     .then((data) => {
-      dispatch({type:'FETCH_SUCCESS', payload: data})
+      dispatch({type:ACTION_TYPES.FETCH_SUCCESS, payload: data})
     })
     .catch((err) => {
-      dispatch({type:'FETCH_ERROR'})
+      dispatch({type:ACTION_TYPES.FETCH_ERROR})
     })
   }
 
